@@ -27,6 +27,18 @@ const projects = [
         desc: "Intenta sobrevivir 5 noches en la mansión encantada de tu familia.",
         links: [{ t: "Jugar", u: "https://bollychaos22.itch.io/legado-de-sangre" }, { t: "Itch.io", u: "https://drakon04.itch.io", ghost: true }]
     },
+    {
+        zone: "videojuegos", tag: "Juego", title: "Rest in Pitch",
+        meta: "Unity · C# · 2025-26", img: "assets/videojuegos/PortadaRestInPitch.png",
+        desc: "¡La orquesta está en tus manos! ¿Serás capaz de mantener la armonía o acabarás dando la nota?",
+        links: [{ t: "Jugar", u: "https://jositopk.itch.io/restinpitch" }, { t: "Itch.io", u: "https://drakon04.itch.io", ghost: true }]
+    },
+    {
+        zone: "videojuegos", tag: "Juego", title: "Dice Dice Baby",
+        meta: "Unity · C# · 2025-26", img: "assets/videojuegos/PortadaDiceDiceBaby.png",
+        desc: "Roll dice, hit your lucky number, and earn multipliers. Upgrade your abilities to reach higher scores in this roguelike.",
+        links: [{ t: "Jugar", u: "https://jositopk.itch.io/dice-dice-baby" }, { t: "Itch.io", u: "https://drakon04.itch.io", ghost: true }]
+    },
 
     // ----- ZONA 2: HERRAMIENTAS PARA UNITY -----
     {
@@ -57,7 +69,7 @@ const projects = [
         zone: "cv", tag: "Contacto", title: "Adrián Gómez-Lobo Núñez",
         meta: "Correo Electrónico", img: "assets/videojuegos/PortadaContacto.png",
         desc: "¿Te interesa mi perfil para tu equipo o proyecto? Puedes contactar conmigo pulsando el botón de abajo.",
-        links: [{ t: "Contactar", u: "https://www.linkedin.com/in/adri%C3%A1n-gomez-lobo-97b89a2ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }] 
+        links: [{ t: "Contactar", u: "https://www.linkedin.com/in/adri%C3%A1n-gomez-lobo-97b89a2ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }]
     },
     {
         zone: "cv", tag: "CV", title: "Adrián Gómez-Lobo Núñez",
