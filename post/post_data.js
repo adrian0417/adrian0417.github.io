@@ -1,36 +1,42 @@
 /* =======================================================================
    BASE DE DATOS DE PUBLICACIONES / BLOG
    ======================================================================= */
+const seriesData = [
+  { id: "tile-painter", title: "Tile Painter 3D", description: "Herramienta de pintado de terreno modular en Unity" },
+  { id: "tfg-grafos", title: "TFG: Generador de grafos", description: "Herramienta en Unity para crear y manipular grafos" },
+  { id: "otros", title: "Otros" }
+];
 const postsData = [
-//   {
-//     id: "group-values-load-system",
-//     title: "Arquitectura de un Save System escalable en Unity",
-//     date: "15 Mar 2026",
-//     tags: ["Unity", "C#", "Architecture"],
-//     summary: "Explicación de cómo sustituir PlayerPrefs por contenedores tipo-seguros basados en ScriptableObjects.",
-//     content: `
-//       <h2>1. Introducción al problema</h2>
-//       <p>PlayerPrefs es suficiente para prototipos pequeños, pero carece de estructura cuando escalamos a inventarios o configuraciones avanzadas.</p>
-      
-//       <h2>2. Uso de SimpleGroupValues</h2>
-//       <p>Para guardar valores rápidos con generics tipo-seguros de forma limpia:</p>
-      
-//       <div class="code-block">
-//         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-//         <pre><code><span class="kw-type">float</span> playerSpeed = <span class="kw-num">7.5f</span>;
-// <span class="kw-func">SimpleGroupValues</span>.Set(<span class="kw-str">"speed"</span>, playerSpeed);</code></pre>
-//       </div>
+  //   {
+  //     id: "group-values-load-system",
+  //     title: "Arquitectura de un Save System escalable en Unity",
+  //     date: "15 Mar 2026",
+  //     tags: ["Unity", "C#", "Architecture"],
+  //     summary: "Explicación de cómo sustituir PlayerPrefs por contenedores tipo-seguros basados en ScriptableObjects.",
+  //     content: `
+  //       <h2>1. Introducción al problema</h2>
+  //       <p>PlayerPrefs es suficiente para prototipos pequeños, pero carece de estructura cuando escalamos a inventarios o configuraciones avanzadas.</p>
 
-//       <p>Y para recuperarlos de forma segura en memoria:</p>
+  //       <h2>2. Uso de SimpleGroupValues</h2>
+  //       <p>Para guardar valores rápidos con generics tipo-seguros de forma limpia:</p>
 
-//       <div class="code-block">
-//         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-//         <pre><code><span class="kw-type">float</span> currentSpeed = <span class="kw-func">SimpleGroupValues</span>.Get&lt;<span class="kw-type">float</span>&gt;(<span class="kw-str">"speed"</span>);</code></pre>
-//       </div>
-//     `
-//   },
- {
+  //       <div class="code-block">
+  //         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  //         <pre><code><span class="kw-type">float</span> playerSpeed = <span class="kw-num">7.5f</span>;
+  // <span class="kw-func">SimpleGroupValues</span>.Set(<span class="kw-str">"speed"</span>, playerSpeed);</code></pre>
+  //       </div>
+
+  //       <p>Y para recuperarlos de forma segura en memoria:</p>
+
+  //       <div class="code-block">
+  //         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  //         <pre><code><span class="kw-type">float</span> currentSpeed = <span class="kw-func">SimpleGroupValues</span>.Get&lt;<span class="kw-type">float</span>&gt;(<span class="kw-str">"speed"</span>);</code></pre>
+  //       </div>
+  //     `
+  //   },
+  {
     id: "tile-painter-3d-unity",
+    series: "tile-painter",
     title: "01. Tile Painter de bloques en un grid 3D en Unity",
     date: "31 Jul 2026",
     tags: ["Unity", "C#", "Algorithms", "GameDev", "3D"],
@@ -212,8 +218,10 @@ const postsData = [
         Pero este no es el final. Queda manejar los casos con distintas alturas, optimizar la generación de mallas combinadas y mucho más. ¡Esto es sólo el principio de la herramienta!
       </p>
     `
-  },{
+  },
+  {
     id: "tile-painter-heights-optimization",
+    series: "tile-painter",
     title: "02. Tile Painter 3D: Alturas, Bitmasks y Optimizaciones",
     date: "25 Ago 2026",
     tags: ["Unity", "C#", "Algorithms", "Optimization", "GameDev"],
@@ -428,5 +436,201 @@ Esto consigue aislar al bit que representa el centro y que siempre haya una dife
         <li>Capa de <em>Decals</em> para el trazado de caminos y detalles de superficie sin alterar el terreno base.</li>
       </ul>
     `
+  },
+  {
+    id: "tfg-generador-grafos-unity",
+    series: "tfg-grafos",
+    title: "Trabajo de TFG de ingeniería de computadores",
+    date: "18 Nov 2026",
+    tags: ["Unity", "C#", "Graphs", "Algorithms", "Tools"],
+    summary: "Herramienta en Unity que permite manipular los nodos y sus conexiones de un grafo.",
+    content: `
+    
+    <!-- FOTO GRAFO -->
+    <figure class="post-img-container">
+    <img src="./references/tfgcompu/GrafosIntro.jpg" alt="Grafo generado con la herramienta" class="post-img">
+    </figure>
+    <h2>Introducción</h2>
+
+      <p>
+        Para mi primer TFG de la parte de computadores estoy realizando un proyecto que involucra la algoritmia de grafos. He descubierto todo un mundo alrededor de los grafos y los complejos problemas que los envuelven. Para no volverme loco he desarrollado una herramienta en Unity que permite manipular los nodos y sus conexiones de un grafo según el usuario antoje.
+      </p>
+
+      <h2>GraphParameters Editor</h2>
+      <!-- FOTO GENERAL FLUJO -->
+      <figure class="post-img-container">
+        <img src="./references/tfgcompu/flujo.png" alt="Flujo general de la herramienta" class="post-img">
+      </figure>
+
+      <p>
+        Para ello lo más importante era crear un flujo de trabajo que permita mantener cierta estructura a la hora de manipular grafos. En una ventana de Unity aparecen 6 tabs distintos. Cada uno cuenta con su propia funcionalidad y agrupa lo necesario para que el usuario tenga una interfaz visual con la que tratar los grafos. Por ello voy a ir describiendo lo que hace cada tab.
+      </p>
+
+      <h3>Parámetros del grafo</h3>
+
+      <!-- FOTO PARAMETERS -->
+      <figure class="post-img-container">
+        <img src="./references/tfgcompu/parameters.jpg" alt="Tab de parámetros del grafo" class="post-img">
+      </figure>
+
+      <p>
+        Este es el primer tab y el más esencial para crear un grafo. Primero se ha de definir el algoritmo a usar por cada grafo. Por el momento hay tres tipos de algoritmos: <strong>Random</strong>, <strong>Greedy</strong> y <strong>Grasp</strong>. Para saber cómo funcionan hay que conocer otra serie de parámetros antes relacionados con los nodos.
+      </p>
+      <ul>
+        <li>Se especifica el número de nodos.</li>
+        <li>Luego se dice el número de nodos sueltos. Estos nodos no van a pertenecer a un ciclo de forma estricta.</li>
+        <li>Se dice si todos los nodos han de estar conectados. Esto implica no tener diferentes componentes conexas dentro de un mismo grafo.</li>
+        <li>Se marca si se quiere que los nodos tengan el número mínimo de adyacencias al conectarse.</li>
+        <li>Se especifican cuantos ciclos se crean. El algoritmo automáticamente tomará <code>NodosTotales-NodosSueltos</code> y los dividirá entre <code>NCiclos</code>.</li>
+        <li>Se pueden dejar los ciclos abiertos (esto significa que dejan de ser ciclos).</li>
+        <li>Se pueden juntar los ciclos con un número de conexiones que se elija (si es mayor que el número de nodos del ciclo se queda con el mínimo valor).</li>
+        <li>Si se quiere usar la matriz de afinidad o no(ver el apartado <em>Matriz de Afinidad</em>).</li>
+      </ul>
+
+      <h3>Nodos del grafo</h3>
+
+      <!-- FOTO NODES -->
+      <figure class="post-img-container">
+        <img src="./references/tfgcompu/nodes.jpg" alt="Tab de tipos de nodos" class="post-img">
+      </figure>
+
+      <p>
+        Posteriormente se crean los tipos de nodos.
+        Estos nodos definen la estructura del grafo. Sus campos son nombre, color, si es único y densidad.
+      </p>
+      <ul>
+        <li>El <strong>nombre</strong> sirve para distinguir entre diferentes nodos. El <strong>color</strong> cumple con el mismo propósito para cuando se representan en el visor de grafos.</li>
+        <li>El campo <strong>Unique</strong> sirve para que sólo exista una instancia (o ninguna) de ese tipo de nodo.</li>
+        <li>La <strong>densidad</strong> es una propiedad especial que indica el porcentaje del tipo de nodo que tiene que estar presente en el grafo.</li>
+      </ul>
+
+      <h3>Matriz de Afinidad</h3>
+
+      <!-- FOTO AFFINITY MATRIX -->
+      <figure class="post-img-container">
+        <img src="./references/tfgcompu/affinity-matrix.jpg" alt="Matriz de afinidad entre tipos de nodo" class="post-img">
+      </figure>
+
+      <p>
+        En base a los nodos creados se crea la matriz de afinidad. En ella el usuario establece una puntuación para la relación que tienen los nodos entre sí. Va de <strong>-100 a 100</strong> y resulta interesante poner distintos valores para obtener un grafo más variado. Además la matriz también influye bastante en la estructura del grafo.
+      </p>
+
+      <h3>Crear el grafo</h3>
+
+      <!-- FOTO CREATE -->
+      <figure class="post-img-container">
+        <img src="./references/tfgcompu/create.jpg" alt="Tab de creación del grafo" class="post-img">
+      </figure>
+
+      <p>
+        En este paso se genera un grafo base según los parámetros establecidos en los anteriores pasos.
+        Ahora es un buen momento para hablar sobre el tipo de algoritmo seleccionado puesto que importa en la selección del tipo de nodo.
+      </p>
+      <p>
+        El algoritmo <strong>random</strong> tomará nodos de forma aleatoria (cumpliendo con los parámetros establecidos), este grafo generado tendrá una puntuación más baja que los otros algoritmos.
+      </p>
+      <p>
+        El algoritmo <strong>greedy</strong>, como su nombre indica tomará los nodos según vaya viendo una mejor relación entre los mismos. Generalmente aporta mejor puntuación que el anterior.
+      </p>
+      <p>
+        El algoritmo <strong>GRASP</strong>(Greedy Randomized Adaptive Search Procedure) viene con dos campos nuevos. Un valor <strong>Alpha</strong> y un número de iteraciones. El valor Alpha crea una especie nota de corte para seleccionar de forma aleatoria a los nodos candidatos. Como es aleatorio en el cómputo global puede dar mejor resultado en alguna de sus iteraciones. En la mayoría de casos es el que mejor puntuación aporta.
+      </p>
+
+      <h3>Restricciones sobre el grafo</h3>
+
+      <!-- FOTO RESTRICTIONS -->
+      <figure class="post-img-container">
+        <img src="./references/tfgcompu/restrictions.jpg" alt="Tab de restricciones" class="post-img">
+      </figure>
+
+      <p>
+        Una vez creado el grafo se pueden seguir aplicando restricciones. Estas restricciones permiten al usuario tener una mayor personalización sobre el grafo.
+        De la forma en la que funcionan es como bloques que se pueden cambiar. Es decir cada restricción realiza una acción que tiene que cumplirse (o no de forma obligada).
+      </p>
+      <p>Funciona con la siguiente semántica:</p>
+      <blockquote>
+        <strong>NodoX</strong> debe/no debe <strong>acción</strong> (sobre <strong>NodoY</strong>).
+      </blockquote>
+      <p>
+        Así existe la restricción de estar(o no estar) dentro de un ciclo, que un nodo esté a una distancia N de otro nodo o que un nodo deba tener cierto número de conexiones.
+      </p>
+      <p>
+        En la descripción de la restricción se explica claramente la acción que realiza.
+      </p>
+      <p>
+        Estas se almacenan en un handler como una lista reordenable y se aplican de arriba hacia abajo. Esto quiere decir que hay veces que no se pueden cumplir todas las restricciones en la primera iteración. De ser así con hacerlo un par de veces más suele bastar.
+      </p>
+
+      <h3>Cómo se crean los nodos Topología-&gt;Tipos(con restricciones)</h3>
+
+      <h3>Optimizar el grafo</h3>
+
+      <!-- FOTO OPTIMIZE -->
+      <figure class="post-img-container">
+        <img src="./references/tfgcompu/optimize.jpg" alt="Tab de optimización del grafo" class="post-img">
+      </figure>
+
+      <p>
+        Se puede exprimir un poco más de la puntuación del grafo para obtener un mayor resultado.
+        Por ello se puede definir el <strong>tipo de mejora</strong>. Esta indica cuando se debe parar la búsqueda de un candidato que mejore la puntuación. Con la <strong>primera mejora</strong> el algoritmo pasa inmediatamente a buscar a otro candidato. Con la <strong>mejor de todas</strong> se itera hasta lograr la máxima puntuación que puede otorgar el candidato disponible.
+      </p>
+      <p>
+        Con el <strong>tipo de movimiento</strong> se puede buscar una estrategia distinta para la optimización. Los tipos de movimientos no añaden ni quitan aristas y nodos. Se trata de modificar las piezas ya existentes que conforman el grafo.
+      </p>
+      <p>Para cada movimiento existente se tienen que hacer una serie de comprobaciones:</p>
+      <ol>
+        <li>No se pueden romper ninguna de las restricciones que ya se cumplen actualmente.</li>
+        <li>Si han de preservarse los nodos únicos no se pueden quitar nodos únicos que ya existen en el grafo.</li>
+        <li>Comprobar que mejora la calidad del grafo en cuanto a afinidad entre nodos.</li>
+      </ol>
+      <p>
+        Un tipo de movimiento que se puede realizar es <strong>cambiar el tipo de nodo</strong> para ganar una mayor afinidad dentro del grafo.
+      </p>
+      <p>
+        Otro tipo de movimiento es <strong>cambiar las aristas</strong> del grafo para que haya conexiones con mayor afinidad entre los nodos.
+      </p>
+
+      <h2>Graph Viewer</h2>
+
+      <!-- FOTO GRAPH VIEWER -->
+      <figure class="post-img-container">
+        <img src="./references/tfgcompu/graph-viewer.png" alt="Ventana Graph Viewer" class="post-img">
+      </figure>
+
+      <p>
+        Una herramienta que diseñé desde el principio de la vida software de este generador de grafos se trata de Graph Viewer. Permite ver en una ventana aparte el grafo que se ha creado de forma visual.
+        Lo primero que se ve al abrir esta ventana es el grafo ya creado mostrando cada nodo con el color asignado a su tipo.
+      </p>
+
+      <!-- FOTO TOTAL SCORE DESGLOSADO -->
+      <figure class="post-img-container">
+        <img src="./references/tfgcompu/total-score.png" alt="Desglose de Total Score" class="post-img">
+      </figure>
+
+      <p>
+        Más arriba aparece el tab de <strong>Total Score</strong>. Al pinchar en el tab aparece un desglose de la puntuación.
+      </p>
+      <ul>
+        <li>Primero muestra la puntuación obtenida según la afinidad.</li>
+        <li>Segundo muestra la puntuación total obtenida según las restricciones.</li>
+        <li>Tercero muestra la lista de las restricciones y la puntuación que otorgan en base a su cumplimiento.</li>
+      </ul>
+
+      <!-- FOTO PHYSICS SETTINGS DESPLEGADA -->
+      <figure class="post-img-container">
+        <img src="./references/tfgcompu/physics-settings.png" alt="Ajustes de la simulación del grafo" class="post-img">
+      </figure>
+
+      <p>
+        Por otro lado hay un desplegable que muestra los ajustes de la simulación del grafo.
+      </p>
+      <ul>
+        <li>Se puede omitir el sentido de las conexiones.</li>
+        <li>Se puede mostrar el número de índice del nodo(mayoritariamente usado para depurar).</li>
+        <li>Se puede quitar que se actualice forma automática la puntuación para evitar problemas de rendimiento(en casos en los que el grafo sea demasiado grande).</li>
+        <li>Se pueden hacer varios ajustes sobre las físicas del grafo(aunque es recomendable dejar los valores por defecto).</li>
+      </ul>
+    `
   }
+
 ];
